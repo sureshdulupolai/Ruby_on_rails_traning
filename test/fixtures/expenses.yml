@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 250
+  category: Food
+  date: 2026-09-02
+  description: Lunch at restaurant
+
+two:
+  amount: 500
+  category: Travel
+  date: 2026-09-01
+  description: Taxi to airport

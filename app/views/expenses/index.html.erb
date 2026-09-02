@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row mb-4">
+    <div class="col">
+      <h1>Expenses</h1>
+    </div>
+    <div class="col text-end">
+      <%= link_to "New Expense", new_expense_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <% if @expenses.any? %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @expenses.each do |expense| %>
+            <tr>
+              <td><%= expense.date.strftime("%d %b %Y") %></td>
+              <td><span class="badge bg-info text-dark"><%= expense.category %></span></td>
+              <td class="fw-bold">₹<%= number_with_precision(expense.amount, precision: 2) %></td>
+              <td><%= truncate(expense.description, length: 50) if expense.description.present? %></td>
+              <td>
+                <%= link_to "View", expense_path(expense), class: "btn btn-sm btn-info" %>
+                <%= link_to "Edit", edit_expense_path(expense), class: "btn btn-sm btn-warning" %>
+                <%= link_to "Delete", expense_path(expense), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this expense?" }, class: "btn btn-sm btn-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <div class="alert alert-info" role="alert">
+      <p class="mb-0">No expenses recorded yet. <%= link_to "Add your first expense", new_expense_path, class: "alert-link" %>.</p>
+    </div>
+  <% end %>
+</div>
