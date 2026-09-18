@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    @expenses = Expense.order(date: :desc)
+    @expenses = current_user.expenses.order(date: :desc)
   end
 
   # GET /expenses/:id
@@ -12,12 +12,12 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new(date: Date.today)
+    @expense = current_user.expenses.build(date: Date.today)
   end
 
   # POST /expenses
   def create
-    @expense = Expense.new(expense_params)
+    @expense = current_user.expenses.build(expense_params)
     if @expense.save
       redirect_to @expense, notice: "Expense was successfully created."
     else
@@ -47,7 +47,7 @@ class ExpensesController < ApplicationController
   private
 
   def set_expense
-    @expense = Expense.find(params[:id])
+    @expense = current_user.expenses.find(params[:id])
   end
 
   def expense_params

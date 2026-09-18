@@ -1,0 +1,15 @@
+                         USERS
+                           │
+          ┌────────────────┼────────────────┐
+          │                │                │
+          ▼                ▼                ▼
+      EXPENSES          BUDGETS       NOTIFICATIONS
+          │                │
+          │                │
+          ▼                ▼
+     CATEGORIES       CATEGORIES
+          │
+          │
+          ▼
+       RECEIPTS
+

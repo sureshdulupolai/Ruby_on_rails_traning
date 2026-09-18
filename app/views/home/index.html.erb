@@ -1,0 +1,83 @@
+<div class="relative overflow-hidden py-12 lg:py-20">
+  <!-- Ambient background glow decoration -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-200/40 via-violet-200/30 to-pink-100/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+  <!-- Hero Section -->
+  <div class="max-w-4xl mx-auto text-center px-4 sm:px-6">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold mb-6 shadow-xs animate-bounce-subtle">
+      <span class="flex h-2 w-2 rounded-full bg-indigo-600"></span>
+      Smart Personal Finance Management
+    </div>
+
+    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+      Master your money with <br class="hidden sm:inline">
+      <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+        smart expense tracking
+      </span>
+    </h1>
+
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+      Take full control of your personal spending, organize expenses by categories, and achieve your financial targets with ease.
+    </p>
+
+    <!-- CTAs -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <%= link_to new_user_registration_path, class: "w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-2xl text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all hover:shadow-2xl hover:-translate-y-0.5 active:scale-[0.99]" do %>
+        Get Started for Free
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      <% end %>
+
+      <%= link_to new_user_session_path, class: "w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-2xl text-base font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all hover:shadow hover:-translate-y-0.5" do %>
+        Sign In to Account
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Feature Grid -->
+  <div class="max-w-6xl mx-auto mt-20 px-4 sm:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Track Expenses Fast</h3>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Record your daily spending in seconds with categories like Food, Travel, Bills, and Entertainment.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Instant Analytics</h3>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Get real-time insights into your total spending, top expense categories, and monthly expenditure trends.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">100% Private & Secure</h3>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          End-to-end encrypted user authentication with Devise keeps your financial data strictly personal and private.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

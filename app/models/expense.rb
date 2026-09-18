@@ -1,4 +1,6 @@
 class Expense < ApplicationRecord
+  belongs_to :user
+
   VALID_CATEGORIES = %w[Food Travel Shopping Bills Entertainment Other].freeze
 
   validates :amount, presence: true, numericality: { greater_than: 0 }

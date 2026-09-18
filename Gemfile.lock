@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    action_text-trix (2.1.19)
-      railties
     actioncable (8.1.3.1)
       actionpack (= 8.1.3.1)
       activesupport (= 8.1.3.1)
@@ -11,9 +9,7 @@ GEM
       zeitwerk (~> 2.6)
     actionmailbox (8.1.3.1)
       actionpack (= 8.1.3.1)
-      activejob (= 8.1.3.1)
       activerecord (= 8.1.3.1)
-      activestorage (= 8.1.3.1)
       activesupport (= 8.1.3.1)
       mail (>= 2.8.0)
     actionmailer (8.1.3.1)
@@ -27,19 +23,17 @@ GEM
       actionview (= 8.1.3.1)
       activesupport (= 8.1.3.1)
       nokogiri (>= 1.8.5)
-      rack (>= 2.2.4)
-      rack-session (>= 1.0.1)
+      rack (>= 3.0.0, < 4.0.0)
+      rack-session (>= 2.0.0)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
     actiontext (8.1.3.1)
-      action_text-trix (~> 2.1.15)
       actionpack (= 8.1.3.1)
       activerecord (= 8.1.3.1)
-      activestorage (= 8.1.3.1)
       activesupport (= 8.1.3.1)
-      globalid (>= 0.6.0)
+      globalid (>= 0.3.6)
       nokogiri (>= 1.8.5)
     actionview (8.1.3.1)
       activesupport (= 8.1.3.1)
@@ -79,6 +73,7 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
     base64 (0.3.0)
+    bcrypt (3.1.20)
     bcrypt_pbkdf (1.1.2)
     bigdecimal (4.1.2)
     bindex (0.8.1)
@@ -106,6 +101,12 @@ GEM
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     dotenv (3.2.0)
     drb (2.2.3)
     ed25519 (1.4.0)
@@ -113,7 +114,7 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.2)
       tzinfo
-    ffi (1.17.4-x86_64-linux-gnu)
+    ffi (1.17.4)
     fugit (1.13.0)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -185,14 +186,14 @@ GEM
       net-protocol
     net-ssh (7.3.3)
     nio4r (2.7.5)
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.19.4-x64-mingw-ucrt)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     ostruct (0.6.3)
     parallel (1.28.0)
     parser (3.3.12.0)
       ast (~> 2.4.1)
       racc
-    pg (1.6.3-x86_64-linux)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
@@ -262,6 +263,9 @@ GEM
     regexp_parser (2.12.0)
     reline (0.7.0)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.4.4)
     rubocop (1.90.0)
       json (>= 2.3)
@@ -326,6 +330,7 @@ GEM
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
       ostruct
+    sqlite3 (2.9.6-x64-mingw-ucrt)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     thor (1.5.0)
@@ -337,11 +342,15 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.2)
+      tzinfo (>= 1.0.0)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.2.0)
     uri (1.1.1)
     useragent (0.16.11)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.3.0)
       actionview (>= 8.0.0)
       bindex (>= 0.4.0)
@@ -356,6 +365,9 @@ GEM
     zeitwerk (2.8.3)
 
 PLATFORMS
+  ruby
+  x64-mingw-ucrt
+  x64-mingw32
   x86_64-linux
 
 DEPENDENCIES
@@ -364,11 +376,11 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  devise (~> 4.9)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kamal
-  pg (~> 1.1)
   propshaft
   puma (>= 5.0)
   rails (~> 8.1.3, >= 8.1.3.1)
@@ -378,6 +390,7 @@ DEPENDENCIES
   solid_cable
   solid_cache
   solid_queue
+  sqlite3 (>= 2.1)
   stimulus-rails
   thruster
   turbo-rails
